@@ -6,20 +6,20 @@
             "value": "Japan West"
         },
         "newStorageAccountName": {
-            "value": "kr001storageforvm"
+            "value": "001storageforvm"
         },
         "newDBStorageAccountName":
         {
-            "value": "kr002storagefordb"
+            "value": "002storagefordb"
         },
         "adminUsername": {
             "value": "ashish"
         },
         "adminPassword": {
-            "value": "hawala@1"
+            "value": ""
         },
         "AppCacheName": {
-            "value": "kronosCache"
+            "value": "AppCache"
         }
     }
 }
