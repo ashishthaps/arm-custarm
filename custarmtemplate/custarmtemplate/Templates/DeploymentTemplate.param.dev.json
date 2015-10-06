@@ -1,0 +1,22 @@
+﻿{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "West US"
+        },
+        "newStorageAccountName": {
+            "value": "kr001storageforvm"
+        },
+        "newDBStorageAccountName":
+        {
+            "value": "kr002storagefordb"
+        },
+        "adminUsername": {
+            "value": "ashish"
+        },
+        "adminPassword": {
+            "value": "hawala@1"
+        }
+    }
+}
