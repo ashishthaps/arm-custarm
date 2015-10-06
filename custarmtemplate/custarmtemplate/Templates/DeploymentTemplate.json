@@ -121,7 +121,49 @@
          "metadata": {
             "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version. Allowed values: 2008-R2-SP1, 2012-Datacenter, 2012-R2-Datacenter."
          }
-        }
+        },
+       "AppCacheName": {
+           "type": "string"
+       },
+       "AppCacheLocation": {
+        "type": "string",
+         "defaultValue": "Japan West"
+       },
+       "AppCacheSKUName": {
+           "type": "string",
+           "allowedValues": [
+               "Basic",
+               "Standard"
+           ],
+           "defaultValue": "Standard"
+       },
+       "AppCacheSKUFamily": {
+           "type": "string",
+           "allowedValues": [
+               "C"
+           ],
+           "defaultValue": "C"
+       },
+       "AppCacheSKUCapacity": {
+           "type": "int",
+           "allowedValues": [
+               0,
+               1,
+               2,
+               3,
+               4,
+               5,
+               6
+           ],
+           "defaultValue": 0
+       },
+       "AppCacheRedisVersion": {
+           "type": "string",
+           "allowedValues": [
+               "2.8"
+           ],
+           "defaultValue": "2.8"
+       }
       },
       "variables": {
          "imagePublisher": "MicrosoftWindowsServer",
@@ -796,6 +838,24 @@
                   ]
                }
             }
-         }
+         },
+          {
+              "name": "[parameters('AppCacheName')]",
+              "type": "Microsoft.Cache/Redis",
+              "location": "[parameters('AppCacheLocation')]",
+              "apiVersion": "2014-04-01-preview",
+              "dependsOn": [ ],
+              "tags": {
+                  "displayName": "AppCache"
+              },
+              "properties": {
+                  "sku": {
+                      "name": "[parameters('AppCacheSKUName')]",
+                      "family": "[parameters('AppCacheSKUFamily')]",
+                      "capacity": "[parameters('AppCacheSKUCapacity')]"
+                  },
+                  "redisVersion": "[parameters('AppCacheRedisVersion')]"
+              }
+          }
       ]
    }

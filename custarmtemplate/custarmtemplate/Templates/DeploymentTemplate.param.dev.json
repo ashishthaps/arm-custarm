@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "value": "West US"
+            "value": "Japan West"
         },
         "newStorageAccountName": {
             "value": "kr001storageforvm"
@@ -17,6 +17,9 @@
         },
         "adminPassword": {
             "value": "hawala@1"
+        },
+        "AppCacheName": {
+            "value": "kronosCache"
         }
     }
 }
